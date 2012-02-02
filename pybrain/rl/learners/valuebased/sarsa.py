@@ -24,6 +24,11 @@ class SARSA(ValueBasedLearner):
         self.laststate = None
         self.lastaction = None
 
+    def reset(self):
+        ValueBasedLearner.reset(self)
+        self.laststate = None
+        self.lastaction = None
+
     def learn(self):
         if self.batchMode:
             samples = self.dataset

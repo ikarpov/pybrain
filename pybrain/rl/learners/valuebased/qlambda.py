@@ -19,6 +19,10 @@ class QLambda(ValueBasedLearner):
         self.laststate = None
         self.lastaction = None
 
+    def reset(self):
+        ValueBasedLearner.reset(self)
+        self.laststate = None
+        self.lastaction = None
 
     def learn(self):
         states = self.dataset['state']

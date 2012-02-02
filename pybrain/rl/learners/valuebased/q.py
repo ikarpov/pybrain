@@ -17,6 +17,11 @@ class Q(ValueBasedLearner):
         self.laststate = None
         self.lastaction = None
 
+    def reset(self):
+        ValueBasedLearner.reset(self)
+        self.laststate = None
+        self.lastaction = None
+
     def learn(self):
         """ Learn on the current dataset, either for many timesteps and
             even episodes (batchMode = True) or for a single timestep
